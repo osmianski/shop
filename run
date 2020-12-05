@@ -1,0 +1,13 @@
+<?php
+
+use Osm\Core\App;
+use Osm\Framework\Console\Module;
+
+$dir = __DIR__;
+require $dir . '/vendor/autoload.php';
+require $dir . '/bootstrap.php';
+
+exit(App::runApp('console', [
+    'base_path' => realpath($dir . '/'),
+    'env' => Module::detectEnv(),
+])->exit_code);

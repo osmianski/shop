@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+function deleteDir($path) {
+    if (!is_dir($path)) {
+        return;
+    }
+
+    foreach (new \DirectoryIterator($path) as $fileInfo) {
+        if ($fileInfo->isDot()) {
+            continue;
+        }
+
+        if ($fileInfo->isDir()) {
+            deleteDir("{$path}/{$fileInfo->getFilename()}");
+        }
+        else {
+            unlink("{$path}/{$fileInfo->getFilename()}");
+        }
+    }
+
+    // while we delete cache files and directories, someone may have already created new ones. In these cases,
+    // deleting directories may fail. As it OK to leave directories in such cases, rmdir ir prefixed with "@"
+    // to suppress error notice.
+    @rmdir($path);
+}
+
+$dir = __DIR__;
+
+deleteDir("{$dir}/temp/development/cache");
+deleteDir("{$dir}/temp/testing/cache");
+deleteDir("{$dir}/temp/production/cache");

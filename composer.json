@@ -1,0 +1,69 @@
+{
+    "name": "osmphp/osmproject2",
+    "description": "Project based on Osm framework",
+    "type": "project",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Vladislav Osmianskij",
+            "email": "vlaosm@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        
+        "osmphp/core": "v0.1.x-dev",
+        "osmphp/framework2": "v0.1.x-dev",
+        "osmphp/data": "v0.1.x-dev",
+        "osmphp/app": "v0.1.x-dev",
+        "osmphp/bootstrap": "v0.1.x-dev",
+        
+        "osmscripts/core2": "v0.1.x-dev",
+        "osmscripts/osm2": "v0.1.x-dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "osmscripts/osm-creator2": "v0.1.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/src/",
+            "App\\Tests\\": "app/tests/",
+            "App\\Samples\\": "app/samples/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "osm": {
+            "component_pools": {
+                "app/src": {
+                    "module_path": "*/Module.php",
+                    "theme_path": "*/theme.php"
+                },
+                "app/samples": {
+                    "module_path": "*/Module.php",
+                    "testing": true
+                }
+            }
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('temp/.env', '.env');\"",
+            "@php -r \"file_exists('.env.testing') || copy('temp/.env.testing', '.env.testing');\"",
+            "@php -r \"chmod('public/files', 0777);\"",
+            "@php -r \"chmod('data/files', 0777);\""
+        ],
+        "post-install-cmd": [
+            "@php fresh",
+            "@php run composer-hooks post-update"
+        ],
+        "post-update-cmd": [
+            "@php fresh",
+            "@php run composer-hooks post-update"
+        ]
+    }
+}

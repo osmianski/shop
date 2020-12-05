@@ -1,0 +1,7 @@
+*
+!.gitignore
+!.env
+!.env.testing
+!.componentignore
+
+# add Git ignore patterns here (if needed)
