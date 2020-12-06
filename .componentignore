@@ -1,1 +1,2 @@
 # add module, theme and translation ignore patterns here (if needed)
+vendor/osmphp/framework2/samples/Ui/**
