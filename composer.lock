@@ -1631,12 +1631,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/osmphp/core.git",
-                "reference": "b0a5cf399a4436b5d436118dab37b2958e282576"
+                "reference": "998ba2955c239e3af7be201980305ad4e3563c7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osmphp/core/zipball/b0a5cf399a4436b5d436118dab37b2958e282576",
-                "reference": "b0a5cf399a4436b5d436118dab37b2958e282576",
+                "url": "https://api.github.com/repos/osmphp/core/zipball/998ba2955c239e3af7be201980305ad4e3563c7e",
+                "reference": "998ba2955c239e3af7be201980305ad4e3563c7e",
                 "shasum": ""
             },
             "require": {
@@ -1680,7 +1680,7 @@
                 "issues": "https://github.com/osmphp/core/issues",
                 "source": "https://github.com/osmphp/core/tree/v0.1"
             },
-            "time": "2020-11-28T15:36:01+00:00"
+            "time": "2020-12-06T16:56:18+00:00"
         },
         {
             "name": "osmphp/data",
@@ -1688,12 +1688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/osmphp/data.git",
-                "reference": "73a0d7f71d425856c94392220e6e9345c736afe3"
+                "reference": "c79326467471d473af832d7855d38f3b5e5b0a13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osmphp/data/zipball/73a0d7f71d425856c94392220e6e9345c736afe3",
-                "reference": "73a0d7f71d425856c94392220e6e9345c736afe3",
+                "url": "https://api.github.com/repos/osmphp/data/zipball/c79326467471d473af832d7855d38f3b5e5b0a13",
+                "reference": "c79326467471d473af832d7855d38f3b5e5b0a13",
                 "shasum": ""
             },
             "require": {
@@ -1738,7 +1738,7 @@
                 "issues": "https://github.com/osmphp/data/issues",
                 "source": "https://github.com/osmphp/data/tree/v0.1"
             },
-            "time": "2020-11-28T15:56:10+00:00"
+            "time": "2020-12-06T16:56:19+00:00"
         },
         {
             "name": "osmphp/framework2",
@@ -1746,12 +1746,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/osmphp/framework2.git",
-                "reference": "a3608a164e56e855965a256fc79aefe551785f51"
+                "reference": "4d6c6a724ef0040ce7f6a7b646b3e1890fc13517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osmphp/framework2/zipball/a3608a164e56e855965a256fc79aefe551785f51",
-                "reference": "a3608a164e56e855965a256fc79aefe551785f51",
+                "url": "https://api.github.com/repos/osmphp/framework2/zipball/4d6c6a724ef0040ce7f6a7b646b3e1890fc13517",
+                "reference": "4d6c6a724ef0040ce7f6a7b646b3e1890fc13517",
                 "shasum": ""
             },
             "require": {
@@ -1788,7 +1788,7 @@
                 ],
                 "psr-4": {
                     "Osm\\Framework\\": "src/",
-                    "Osm\\Tests\\": "tests/",
+                    "Osm\\Framework\\Tests\\": "tests/",
                     "Osm\\Samples\\": "samples/"
                 }
             },
@@ -1807,7 +1807,7 @@
                 "issues": "https://github.com/osmphp/framework2/issues",
                 "source": "https://github.com/osmphp/framework2/tree/v0.1"
             },
-            "time": "2020-11-29T15:58:04+00:00"
+            "time": "2020-12-06T16:56:18+00:00"
         },
         {
             "name": "osmscripts/core2",
@@ -1815,12 +1815,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/osmscripts/core2.git",
-                "reference": "2289aa22aade117438dfeb00e41ac0f253dfdb50"
+                "reference": "a9d275652ce045f29e63bb023268c27b93215182"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osmscripts/core2/zipball/2289aa22aade117438dfeb00e41ac0f253dfdb50",
-                "reference": "2289aa22aade117438dfeb00e41ac0f253dfdb50",
+                "url": "https://api.github.com/repos/osmscripts/core2/zipball/a9d275652ce045f29e63bb023268c27b93215182",
+                "reference": "a9d275652ce045f29e63bb023268c27b93215182",
                 "shasum": ""
             },
             "require": {
@@ -1849,7 +1849,7 @@
                 "issues": "https://github.com/osmscripts/core2/issues",
                 "source": "https://github.com/osmscripts/core2/tree/v0.1"
             },
-            "time": "2020-11-29T15:12:40+00:00"
+            "time": "2020-12-06T14:29:11+00:00"
         },
         {
             "name": "osmscripts/osm2",
@@ -1857,12 +1857,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/osmscripts/osm2.git",
-                "reference": "302cc6991c82da6daf6cb9e8908911d3fa44039b"
+                "reference": "c0e3a9c8815dca6a6dc7cb860de298f4fc789866"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osmscripts/osm2/zipball/302cc6991c82da6daf6cb9e8908911d3fa44039b",
-                "reference": "302cc6991c82da6daf6cb9e8908911d3fa44039b",
+                "url": "https://api.github.com/repos/osmscripts/osm2/zipball/c0e3a9c8815dca6a6dc7cb860de298f4fc789866",
+                "reference": "c0e3a9c8815dca6a6dc7cb860de298f4fc789866",
                 "shasum": ""
             },
             "require": {
@@ -1894,7 +1894,7 @@
                 "issues": "https://github.com/osmscripts/osm2/issues",
                 "source": "https://github.com/osmscripts/osm2/tree/v0.1"
             },
-            "time": "2020-11-27T14:43:15+00:00"
+            "time": "2020-12-06T14:30:11+00:00"
         },
         {
             "name": "phpoption/phpoption",
