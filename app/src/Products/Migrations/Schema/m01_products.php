@@ -13,6 +13,8 @@ class m01_products extends Migration
                 ->unique()->required();
             $table->string('title')->title("Title")
                 ->index()->required();
+            $table->string('platform', 20)->title("Platform")
+                ->index();
         });
     }
 

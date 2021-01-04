@@ -12,4 +12,7 @@ class Column extends Object_
     public function pack(&$result, $value) {
         $result[$this->name] = $value;
     }
+
+    public function validate($value) {
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Products;
 
+use App\Products\Columns;
 use App\Products\Columns\Column;
 use App\Products\Exceptions\UnknownColumn;
 use Osm\Core\App;
@@ -27,8 +28,16 @@ class Products extends Object_
 
         switch ($property) {
             case 'columns': return [
-                'sku' => Column::new([], 'sku', $this),
-                'title' => Column::new([], 'title', $this),
+                'sku' => Columns\Column::new([], 'sku', $this),
+                'title' => Columns\Column::new([], 'title', $this),
+                'platform' => Columns\StringSelect::new([
+                    'options' => [
+                        'magento1' => 'Magento 1.x',
+                        'magento2' => 'Magento 2.x',
+                        'osmshop' => 'Osm Shop',
+                        'osm' => 'Osm Framework',
+                    ],
+                ], 'platform', $this),
             ];
             case 'table_name': return $this->name;
 
@@ -45,8 +54,14 @@ class Products extends Object_
         }
 
         return $this->db[$this->table_name]->insert($rawValues);
+    }
 
-        throw new NotImplemented();
+    public function query(): Query {
+        return Query::new();
+    }
+
+    public function search($text): Query {
+        return $this->query()->search($text);
     }
 
     /**
