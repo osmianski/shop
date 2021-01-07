@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Products;
 
 use App\Base\Hints\AppHint;
 use App\Products\Products;
@@ -12,7 +12,7 @@ use Osm\Framework\Testing\Tests\AppTestCase;
 /**
  * @property Products $products
  */
-class ProductsTest extends AppTestCase
+class t99_SheetTest extends AppTestCase
 {
     protected function default($property) {
         global $osm_app; /* @var App|AppHint $osm_app */

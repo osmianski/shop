@@ -5,9 +5,8 @@ namespace App\Products;
 use App\Products\Columns;
 use App\Products\Columns\Column;
 use App\Products\Exceptions\UnknownColumn;
+use App\Sheets\Sheet;
 use Osm\Core\App;
-use Osm\Core\Exceptions\NotImplemented;
-use Osm\Core\Object_;
 use Osm\Data\TableQueries\TableQuery;
 use Osm\Framework\Db\Db;
 
@@ -19,11 +18,10 @@ use Osm\Framework\Db\Db;
  *
  * @property Db|TableQuery[] $db @required
  */
-class Products extends Object_
+class Products extends Sheet
 {
-    public $name = 'products';
 
-    protected function default($property) {
+    protected function default($property): mixed {
         global $osm_app; /* @var App $osm_app */
 
         switch ($property) {

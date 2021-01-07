@@ -39,10 +39,8 @@ class Runner extends Object_
         return parent::default($property);
     }
 
-    public static function run(array|object $data): Dataset {
-        $instance = static::new($data);
-
-        return $instance->doRun();
+    public static function run(Query $query): Dataset {
+        return static::new(['query' => $query])->doRun();
     }
 
     protected function doRun(): Dataset {
@@ -52,7 +50,7 @@ class Runner extends Object_
             return $this->runRaw();
         }
 
-        // If formula filters are also requested, then normally IDs matching
+        // If formula filters are also requested, then IDs matching
         // the formula filters are fetched, and then the returned IDs are
         // passed to the ElasticSearch. However, if the ID array too long,
         // search will not run with a warning, and facets will be counted

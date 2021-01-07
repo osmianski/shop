@@ -44,7 +44,7 @@ class Query extends Object_
     public function get(string|array ...$columns): Dataset {
         $this->select(...$columns);
 
-        return Runner::run(['query' => $this]);
+        return Runner::run($this);
     }
 
 
