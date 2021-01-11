@@ -2,23 +2,27 @@
 
 namespace App\Products\Migrations\Schema;
 
+use App\Sheets\Sheets;
+use Osm\Core\App;
 use Osm\Data\Tables\Blueprint;
 use Osm\Framework\Migrations\Migration;
 
+/**
+ * @property Sheets $app_sheets @required
+ */
 class m01_products extends Migration
 {
+    protected function get_app_sheets(): Sheets {
+        global $osm_app; /* @var App $osm_app */
+
+        return $osm_app->app_sheets;
+    }
+
     public function up() {
-        $this->db->create('products', function (Blueprint $table) {
-            $table->string('sku')->title("SKU")
-                ->unique()->required();
-            $table->string('title')->title("Title")
-                ->index()->required();
-            $table->string('platform', 20)->title("Platform")
-                ->index();
-        });
+        $this->app_sheets->create('products');
     }
 
     public function down() {
-        $this->db->drop('products');
+        $this->app_sheets->drop('products');
     }
 }

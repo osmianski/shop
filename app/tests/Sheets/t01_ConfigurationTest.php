@@ -20,5 +20,6 @@ class t01_ConfigurationTest extends AppTestCase
 
         // THEN you get them as defined in the configuration
         $this->assertEquals('t_posts', $posts->name);
+        $this->assertArrayHasKey('title', $posts->columns);
     }
 }

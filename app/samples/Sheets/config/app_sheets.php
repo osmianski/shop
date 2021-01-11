@@ -7,5 +7,8 @@ use App\Samples\Sheets\TPosts;
 return [
     't_posts' => [
         'class' => TPosts::class,
+        'column_config' => [
+            'title' => [],
+        ],
     ],
 ];

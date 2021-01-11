@@ -14,6 +14,7 @@ class Module extends BaseModule
      */
     public array $hard_dependencies = [
         'App_Base',
+        'Osm_Data_Files',
     ];
 
     /**
