@@ -8,7 +8,14 @@ return [
     't_posts' => [
         'class' => TPosts::class,
         'column_config' => [
-            'title' => [],
+            'id' => [
+                'primary' => true,
+            ],
+            'title' => [
+                'required' => true,
+                'db_migrator' => 'string',
+                'elastic_migrator' => 'string',
+            ],
         ],
     ],
 ];

@@ -19,10 +19,12 @@
         "osmphp/bootstrap": "v0.1.x-dev",
         
         "osmscripts/core2": "v0.1.x-dev",
-        "osmscripts/osm2": "v0.1.x-dev"
+        "osmscripts/osm2": "v0.1.x-dev",
+
+        "elasticsearch/elasticsearch": "~7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8",
+        "phpunit/phpunit": "^9",
         "osmscripts/osm-creator2": "v0.1.x-dev"
     },
     "autoload": {

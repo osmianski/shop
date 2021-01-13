@@ -38,6 +38,8 @@ class Sheets extends ObjectRegistry
         foreach ($sheet->columns as $column) {
             $column->afterAdding();
         }
+
+        $sheet->search_engine->reindex();
     }
 
     public function drop(string $sheetName) {
