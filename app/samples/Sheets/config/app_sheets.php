@@ -9,12 +9,12 @@ return [
         'class' => TPosts::class,
         'column_config' => [
             'id' => [
-                'primary' => true,
+                'type' => 'id',
             ],
             'title' => [
+                'type' => 'string',
                 'required' => true,
-                'db_migrator' => 'string',
-                'elastic_migrator' => 'string',
+                //'elastic_migrator' => 'string',
             ],
         ],
     ],

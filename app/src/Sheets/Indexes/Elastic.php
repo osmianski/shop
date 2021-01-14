@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Sheets\SearchEngines;
+namespace App\Sheets\Indexes;
 
-use App\Elastic\Index;
-use App\Sheets\Sheet;
+use App\Elastic\Index as ElasticIndex;
+use App\Sheets\Sheets\Sheet;
 use Osm\Core\App;
 
 /**
@@ -15,21 +15,19 @@ use Osm\Core\App;
  *
  * Dependencies:
  *
- * @property Index $index @required
+ * @property ElasticIndex $index @required
  */
-class Elastic extends SearchEngine
+class Elastic extends Index
 {
     /** @noinspection PhpUnused */
-    protected function get_index(): Index {
+    protected function get_index(): ElasticIndex {
         global $osm_app; /* @var App $osm_app */
 
         return $osm_app->elastic[$this->parent->name];
     }
 
-    public function reindex(): void {
-        if ($this->index->exists()) {
-            $this->index->delete();
-        }
+    public function create(): void {
+        $this->drop();
 
         $params = [];
         foreach ($this->parent->columns as $column) {
@@ -37,5 +35,11 @@ class Elastic extends SearchEngine
         }
 
         $this->index->create($params);
+    }
+
+    public function drop(): void {
+        if ($this->index->exists()) {
+            $this->index->delete();
+        }
     }
 }

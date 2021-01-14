@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Sheets\Traits;
 
-use App\Sheets\Sheets;
+use App\Sheets\Sheets\Sheets;
 use Osm\Core\App;
 
 trait PropertiesTrait

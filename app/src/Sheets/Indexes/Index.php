@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Sheets\SearchEngines;
+namespace App\Sheets\Indexes;
 
 use Osm\Core\Object_;
 use Osm\Data\Sheets\Sheet;
@@ -12,8 +12,16 @@ use Osm\Data\Sheets\Sheet;
  *
  * @property Sheet $parent @required
  */
-class SearchEngine extends Object_
+class Index extends Object_
 {
+    public function create(): void {
+        // by default do nothing
+    }
+
+    public function drop(): void {
+        // by default do nothing
+    }
+
     public function reindex(): void {
         // by default do nothing
     }

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Sheets\ColumnElasticMigrators;
 
 use App\Elastic\Index;
-use App\Sheets\Column;
-use App\Sheets\Sheet;
+use App\Sheets\Sheets\Columns\Column;
+use App\Sheets\Sheets\Sheet;
 use Osm\Core\App;
 use Osm\Core\Object_;
 

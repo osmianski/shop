@@ -2,13 +2,11 @@
 
 namespace App\Products;
 
-use App\Products\Columns;
 use App\Products\Columns\Column;
 use App\Products\Exceptions\UnknownColumn;
-use App\Sheets\Sheet;
-use Osm\Core\App;
+use App\Sheets\Sheets\Table;
 
-class Products extends Sheet
+class Products extends Table
 {
     public function insert($values) {
         $rawValues = [];

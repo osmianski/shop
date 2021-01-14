@@ -7,71 +7,71 @@ return [
         'class' => Products::class,
         'column_config' => [
             'id' => [
-                'primary' => true,
+                'type' => 'id',
             ],
             'sku' => [
+                'type' => 'string',
                 'required' => true,
-                'db_migrator' => 'string',
             ],
             'url_key' => [
+                'type' => 'string',
                 'required' => true,
-                'db_migrator' => 'string',
             ],
             'title' => [
+                'type' => 'string',
                 'required' => true,
-                'db_migrator' => 'string',
             ],
             'summary' => [
-                'db_migrator' => 'text',
+                'type' => 'text',
             ],
             'description' => [
-                'db_migrator' => 'text',
+                'type' => 'text',
             ],
             'enabled' => [
-                'db_migrator' => 'bool',
+                'type' => 'bool',
             ],
             'show_in_listing' => [
-                'db_migrator' => 'bool',
+                'type' => 'bool',
             ],
             'show_in_search' => [
-                'db_migrator' => 'bool',
+                'type' => 'bool',
             ],
             'price' => [
+                'type' => 'price',
                 'required' => true,
-                'db_migrator' => 'price',
             ],
             'special_price' => [
-                'db_migrator' => 'price',
+                'type' => 'price',
             ],
             'special_starts_at' => [
-                'db_migrator' => 'datetime',
+                'type' => 'datetime',
             ],
             'special_ends_at' => [
-                'db_migrator' => 'datetime',
+                'type' => 'datetime',
             ],
             'meta_title' => [
-                'db_migrator' => 'string',
+                'type' => 'string',
             ],
             'meta_keywords' => [
-                'db_migrator' => 'text',
+                'type' => 'text',
             ],
             'meta_description' => [
-                'db_migrator' => 'text',
+                'type' => 'text',
             ],
             'image' => [
-                'db_migrator' => 'file',
+                'type' => 'file',
             ],
             'images' => [
-                'db_migrator' => 'files',
+                'type' => 'files',
             ],
             'related_products' => [
-                'db_migrator' => 'products',
+                'type' => 'products',
             ],
             'upsell_products' => [
-                'db_migrator' => 'products',
+                'type' => 'products',
             ],
             'crosssell_products' => [
-                'db_migrator' => 'products',
+                'type' => 'products',
             ],
         ],
     ],

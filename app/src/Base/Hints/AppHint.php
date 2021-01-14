@@ -5,7 +5,7 @@ namespace App\Base\Hints;
 use App\Elastic\Index;
 use App\Elastic\Cluster;
 use App\Products\Products;
-use App\Sheets\Sheets;
+use App\Sheets\Sheets\Sheets;
 use Osm\Core\App;
 
 /**

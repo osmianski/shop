@@ -2,16 +2,17 @@
 
 namespace App\Products\Migrations\Schema;
 
-use App\Sheets\Sheets;
+use App\Sheets\Sheets\Sheets;
+use App\Sheets\Sheets\Table;
 use Osm\Core\App;
-use Osm\Data\Tables\Blueprint;
 use Osm\Framework\Migrations\Migration;
 
 /**
- * @property Sheets $app_sheets @required
+ * @property Sheets|Table[] $app_sheets @required
  */
 class m01_products extends Migration
 {
+    /** @noinspection PhpUnused */
     protected function get_app_sheets(): Sheets {
         global $osm_app; /* @var App $osm_app */
 
@@ -19,10 +20,10 @@ class m01_products extends Migration
     }
 
     public function up() {
-        $this->app_sheets->create('products');
+        $this->app_sheets['products']->create();
     }
 
     public function down() {
-        $this->app_sheets->drop('products');
+        $this->app_sheets['products']->drop();
     }
 }
