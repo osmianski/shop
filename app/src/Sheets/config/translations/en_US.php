@@ -7,4 +7,5 @@ return [
     "Sheet column type ':name' not found" => "Sheet column type ':name' not found",
     "No type specified for ':sheet.:column' sheet column" => "No type specified for ':sheet.:column' sheet column",
     "Sheet index type ':name' not found" => "Sheet index type ':name' not found",
+    "Sheet index column type ':name' not found" => "Sheet index column type ':name' not found",
 ];

@@ -8,7 +8,7 @@ use Osm\Data\Tables\Blueprint;
 
 class Text extends Column
 {
-    public function create(Blueprint $table) {
+    public function create(Blueprint $table): void {
         $table->text($this->name)->title($this->name);
     }
 }

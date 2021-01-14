@@ -30,7 +30,7 @@ use Osm\Core\Object_;
  * Dependencies:
  *
  * @property Module $sheet_module @required
- * @property ColumnTypes|string[] $sheet_column_types @required
+ * @property ColumnTypes|string[] $column_types @required
  * @property IndexTypes|string[] $index_types @required
  */
 class Sheet extends Object_
@@ -43,7 +43,7 @@ class Sheet extends Object_
     }
 
     /** @noinspection PhpUnused */
-    protected function get_sheet_column_types(): ColumnTypes {
+    protected function get_column_types(): ColumnTypes {
         return $this->sheet_module->sheet_column_types;
     }
 
@@ -61,6 +61,7 @@ class Sheet extends Object_
     protected function get_index(): Index {
         return Index::new([
             'class' => $this->index_types[$this->index_type],
+            'type' => $this->index_type,
             'parent' => $this,
         ]);
     }
@@ -90,7 +91,7 @@ class Sheet extends Object_
 
             $data['name'] = $name;
             $data['parent'] = $this;
-            $data['class'] = $this->sheet_column_types[$type];
+            $data['class'] = $this->column_types[$type];
             $result[$name] = Column::new($data);
         }
 

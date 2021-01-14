@@ -45,6 +45,10 @@ class Table extends Sheet
     }
 
     public function drop(): void {
+        foreach ($this->columns as $column) {
+            $column->beforeDropping();
+        }
+
         $this->db->drop($this->name);
 
         parent::drop();

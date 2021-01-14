@@ -5,41 +5,46 @@ declare(strict_types=1);
 namespace App\Sheets\Indexes;
 
 use App\Elastic\Index as ElasticIndex;
-use App\Sheets\Sheets\Sheet;
+use App\Sheets\Indexes\Columns\Elastic\Column as ElasticColumn;
 use Osm\Core\App;
 
 /**
- * Constructor parameters:
+ * Computed:
  *
- * @property Sheet $parent @required
+ * @property ElasticColumn[] $columns @required
  *
  * Dependencies:
  *
- * @property ElasticIndex $index @required
+ * @property ElasticIndex $elastic @required
  */
 class Elastic extends Index
 {
     /** @noinspection PhpUnused */
-    protected function get_index(): ElasticIndex {
+    protected function get_elastic(): ElasticIndex {
         global $osm_app; /* @var App $osm_app */
 
         return $osm_app->elastic[$this->parent->name];
+    }
+
+    /** @noinspection PhpUnused */
+    protected function get_default_column_class(): string {
+        return ElasticColumn::class;
     }
 
     public function create(): void {
         $this->drop();
 
         $params = [];
-        foreach ($this->parent->columns as $column) {
-            $column->createInElasticIndex($params);
+        foreach ($this->columns as $column) {
+            $column->create($params);
         }
 
-        $this->index->create($params);
+        $this->elastic->create($params);
     }
 
     public function drop(): void {
-        if ($this->index->exists()) {
-            $this->index->delete();
+        if ($this->elastic->exists()) {
+            $this->elastic->delete();
         }
     }
 }

@@ -24,11 +24,15 @@ class Column extends BaseColumn
         return $osm_app->db;
     }
 
-    public function create(Blueprint $table) {
+    public function create(Blueprint $table): void {
         // by default, do nothing
     }
 
-    public function afterCreated() {
+    public function afterCreated(): void {
+        // by default, do nothing
+    }
+
+    public function beforeDropping(): void {
         // by default, do nothing
     }
 
@@ -62,5 +66,22 @@ class Column extends BaseColumn
             ->unsigned()->pinned()->required($cascadeDelete)
             ->references($references)
             ->on_delete($cascadeDelete ? 'cascade' : 'set null');
+    }
+
+
+    protected function dropBackReference(Blueprint $table,
+        ?string $columnName = null)
+    {
+        if (!$columnName) {
+            $columnName = $this->parent->singular_name . '_' .
+                $this->parent->primary_column->name;
+        }
+
+        if (!isset($this->db->tables[$table->name]->columns[$columnName])) {
+            return;
+        }
+
+        $table->dropReferences($columnName);
+        $table->dropColumns($columnName);
     }
 }

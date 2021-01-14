@@ -8,7 +8,7 @@ use Osm\Data\Tables\Blueprint;
 
 class Bool_ extends Column
 {
-    public function create(Blueprint $table) {
+    public function create(Blueprint $table): void {
         $table->bool($this->name)->title($this->name)
             ->required()->value(false);
     }

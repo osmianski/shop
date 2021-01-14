@@ -8,7 +8,7 @@ use Osm\Data\Tables\Blueprint;
 
 class Price extends Column
 {
-    public function create(Blueprint $table) {
+    public function create(Blueprint $table): void {
         $table->decimal($this->name)->title($this->name)
             ->required($this->required ?? false);
     }

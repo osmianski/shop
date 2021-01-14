@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace App\Sheets;
 
+use App\Sheets\Indexes\Columns\ColumnTypes as IndexColumnTypes;
 use App\Sheets\Indexes\IndexTypes;
-use App\Sheets\Sheets\Columns\ColumnTypes;
+use App\Sheets\Sheets\Columns\ColumnTypes as SheetColumnTypes;
 use Osm\Core\App;
 use Osm\Core\Modules\BaseModule;
 use Osm\Core\Properties;
 
 /**
- * @property ColumnTypes|string[] $sheet_column_types @required
+ * @property SheetColumnTypes|string[] $sheet_column_types @required
  * @property IndexTypes|string[] $index_types @required
+ * @property IndexColumnTypes|string[] $index_column_types @required
  */
 class Module extends BaseModule
 {
@@ -33,11 +35,11 @@ class Module extends BaseModule
     ];
 
     /** @noinspection PhpUnused */
-    protected function get_sheet_column_types(): ColumnTypes {
+    protected function get_sheet_column_types(): SheetColumnTypes {
         global $osm_app; /* @var App $osm_app */
 
-        return $osm_app->cache->remember("app_sheet_columns_types", function($data) {
-            return ColumnTypes::new($data);
+        return $osm_app->cache->remember("app_sheet_column_types", function($data) {
+            return SheetColumnTypes::new($data);
         });
     }
 
@@ -49,4 +51,14 @@ class Module extends BaseModule
             return IndexTypes::new($data);
         });
     }
+
+    /** @noinspection PhpUnused */
+    protected function get_index_column_types(): IndexColumnTypes {
+        global $osm_app; /* @var App $osm_app */
+
+        return $osm_app->cache->remember("app_sheet_index_column_types", function($data) {
+            return IndexColumnTypes::new($data);
+        });
+    }
+
 }

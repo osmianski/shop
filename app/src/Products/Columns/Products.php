@@ -7,15 +7,27 @@ namespace App\Products\Columns;
 use App\Sheets\Sheets\Columns\Table\Column;
 use Osm\Data\Tables\Blueprint;
 
+/**
+ * Computed:
+ *
+ * @property string $table_name @required
+ */
 class Products extends Column
 {
-    public function afterCreated() {
-        $tableName = "{$this->parent->name}__{$this->name}";
+    /** @noinspection PhpUnused */
+    protected function get_table_name(): string {
+        return "{$this->parent->name}__{$this->name}";
+    }
 
-        $this->db->create($tableName, function (Blueprint $table) {
+    public function afterCreated(): void {
+        $this->db->create($this->table_name, function (Blueprint $table) {
             $this->createBackReference($table);
             $this->createBackReference($table, 'value');
-            $table->int('position')->unsigned()->title("Position");
+            $table->int('sort_order')->unsigned()->title("Sort Order");
         });
+    }
+
+    public function beforeDropping(): void {
+        $this->db->drop($this->table_name);
     }
 }
