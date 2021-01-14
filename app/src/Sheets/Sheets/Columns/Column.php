@@ -13,8 +13,7 @@ use Osm\Core\Object_;
  *
  * @property string $type @required @part
  * @property bool $required @part
- * @property string $db_migrator @part
- * @property string $elastic_migrator @part
+ * @property float $search_weight @part
  *
  * Computed:
  *

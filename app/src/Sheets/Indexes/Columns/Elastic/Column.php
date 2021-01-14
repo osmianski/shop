@@ -8,7 +8,7 @@ use App\Sheets\Indexes\Columns\Column as BaseColumn;
 
 class Column extends BaseColumn
 {
-    public function create(array &$params) {
+    public function create(array &$params): void {
         // by default, do nothing
     }
 }

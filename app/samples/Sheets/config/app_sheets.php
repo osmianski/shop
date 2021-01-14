@@ -14,7 +14,10 @@ return [
             'title' => [
                 'type' => 'string',
                 'required' => true,
-                //'elastic_migrator' => 'string',
+                'search_weight' => 1.0,
+            ],
+            'color' => [
+                'type' => 'string_option',
             ],
         ],
     ],
